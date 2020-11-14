@@ -2,7 +2,7 @@
 # DATA 146 Extra Credit
 # Nov. 13, 2020
 
-##Data
+## Data
 The data used in this project describe demographic information about a population in Liberia. This information came from a household survey which describes factors such as location, age, wealth, gender, and education. Initially, we were looking for a model that would best predict education based on the other factors. 
 In Figure 1, you can see a pairplot of the different demographic factors. Higher numbers indicate higher levels of education and wealth whereas lower numbers indicate lower levels. Not all the data are equally distributed in each category either. For example, looking at the histogram of age you can see that the survey included more young than old. 
 
@@ -106,5 +106,5 @@ After testing models with Education as the target, I also tested for Wealth as t
 
 
 
-##Conclusions
+## Conclusions
 After my analysis, I would say that my RFC did the best job at predicting education based off of the other factors. This was based on the training and testing scores I achieved through my analysis. Overall, it makes sense that demographic information such as age, gender, and wealth could predict something such as education decently accurately. If I were to continue to do more tests in the future, it would be interesting to look at more demographic information from the household survey and see if there were any additional demographic factors that could serve as indicators of education and help strengthen my model. 
