@@ -86,3 +86,5 @@ After testing models with Education as the target, I also tested for Wealth as t
 
 ## Conclusions
 After my analysis, I would say that my RFC did the best job at predicting education based off of the other factors. This was based on the training and testing scores I achieved through my analysis. Overall, it makes sense that demographic information such as age, gender, and wealth could predict something such as education decently accurately. If I were to continue to do more tests in the future, it would be interesting to look at more demographic information from the household survey and see if there were any additional demographic factors that could serve as indicators of education and help strengthen my model. 
+
+All of my code can be found through Google CoLab here: https://colab.research.google.com/drive/1eig5ughmNzuaMA-Ttmm569CSZZwuzXWD?usp=sharing
