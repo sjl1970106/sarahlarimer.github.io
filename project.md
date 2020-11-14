@@ -6,11 +6,13 @@
 The data used in this project describe demographic information about a population in Liberia. This information came from a household survey which describes factors such as location, age, wealth, gender, and education. Initially, we were looking for a model that would best predict education based on the other factors. 
 In Figure 1, you can see a pairplot of the different demographic factors. Higher numbers indicate higher levels of education and wealth whereas lower numbers indicate lower levels. Not all the data are equally distributed in each category either. For example, looking at the histogram of age you can see that the survey included more young than old. 
 
-![test](Unknown.jpeg)
+![test](corr.png) ![test](age.png)
 
 
 
 The first thing I did to get  a better sense of the data was to see if there were initially any features that were highly correlated. I created a heat map to see this information. None of the features presented a particularly strong individual correlation.
+
+![test](heatmap.png)
 
 I also performed PCA on the unstandardized(L) and standardized(R) data in order to see how much variance could be explained by the principal components. This is shown by the scree plots below
 
