@@ -26,14 +26,14 @@ Accuracy = 0.57
 ![test](1regression.png)
 
 As you can see in the confusion matrix, this first logistic regression failed to predict the 9 category of education. 
-
+### Standardization/Normalization
 The next step was to try different modes of standardizing and normalizing the data to see if the regression would perform better. 
 
 Standard Scaler and Min Max Scaler produced similar results:
 ![test](2regression.png)
 
 The normalizer gave the best results. However, as you can see, none of the different logistic regression models were a particularly good predictor of the data. All of them failed to predict the 9 category of education and Normalizer, although giving the best score, failed to predict the 3 category as well. 
-
+### kNN Model
 After trying a logistic regression, I tried to do a kNN model. Because the data should be standardized for kNN, I tried to do it with both Standard Scaler as well as the Normalizer. For both of the kNN models, I used a for loop to try and find the best value for k. 
 
 For the Standard Scaler version, I got a max testing score of 0.7031. This also corresponded to the value for k that gave me the least overfit model (the smallest difference between corresponding training/testing scores), with a training score of 0.737. While this resulted in a higher score than any of the logistic regression models, it is important to note that the model is still overfit. 
@@ -54,7 +54,7 @@ As a result of doing this, I was able to achieve a testing score of 0.701 and a 
 
 As you can see, the training scores drastically decreased in this model as the number of neighbors increased. As the number of neighbors increases, both training and testing decrease at similar rates and stay a relatively similar distance apart. Because of this, I chose k=60 as the best model because it is the highest scores that are also relatively not over-fit. 
 
-
+### Decision Tree
 The next thing to do was to investigate this data by creating a model from a decision tree. Similar to varying k-neighbors in the kNN model, for the decision tree I looped over different values for max_depth. 
 
 ![test](dt.png)
@@ -65,16 +65,19 @@ With this model I achieved a testing score of 0.702 and a training score of 0.71
 
 
 
-
+### Random Forest
 The next step in the creation of a model is to combine decision trees and use a Random Forest model. For random forest, not old did I vary the number of estimators but also the max_depth for each of those estimators. I looped over a max_depth of 2-9 and a number of iterators 2-48. 
 
-
+![test](dtc.png)
 
 I wanted to visualize my results so I graphed the train and test scores over iterations through the loop (192 total). Although this is not the best graph I could generate, one can calculate the max_depth/estimators combination through modular arithmetic. 
 
 The combination that I found to produce the best scores with the least overfitting was a max_depth of 8 and a n_estimators of 33. This produced a test score of 0.7219 and a training score of 0.7333. 
+
+### Using Education Instead of Wealth
 After testing models with Education as the target, I also tested for Wealth as the target. Because my Random Forest was the best model, I started with this as the model I would test, this time using wealth as the target. After running my Random Forest, I didn’t get very good results. Training accuracy never reached .5 and testing accuracy plateaued around .4 when I looped across max_depth and n_iterators all the way up to 10 and 50 respectively. 
 
+![test](education.png)
 
 
 
