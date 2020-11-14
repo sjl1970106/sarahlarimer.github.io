@@ -38,11 +38,11 @@ After trying a logistic regression, I tried to do a kNN model. Because the data 
 
 For the Standard Scaler version, I got a max testing score of 0.7031. This also corresponded to the value for k that gave me the least overfit model (the smallest difference between corresponding training/testing scores), with a training score of 0.737. While this resulted in a higher score than any of the logistic regression models, it is important to note that the model is still overfit. 
 
-
+![test](ss.png)
 
 For the Normalizer standardization version, I got a max testing score of .6648 and a corresponding training score of approximately .710. On a whole, this model did worse than the model that used standard scaler as it’s method of data standardization. 
 
-
+![test](norm.png)
 
 
 
@@ -50,15 +50,14 @@ However, for both of these models I initially used a range of 2-18 as my k-value
 
 As a result of doing this, I was able to achieve a testing score of 0.701 and a corresponding training score of 0.711. While this is a slight decrease in the testing accuracy from the initial SS kNN, it is also a less overfit model. This final kNN model was a result of a k-value of 60. 
 
-
+![test](knn.png)
 
 As you can see, the training scores drastically decreased in this model as the number of neighbors increased. As the number of neighbors increases, both training and testing decrease at similar rates and stay a relatively similar distance apart. Because of this, I chose k=60 as the best model because it is the highest scores that are also relatively not over-fit. 
 
 
-
-
 The next thing to do was to investigate this data by creating a model from a decision tree. Similar to varying k-neighbors in the kNN model, for the decision tree I looped over different values for max_depth. 
 
+![test](dt.png)
 
 After producing the data for the training and testing scores, I concluded that the best max_depth for the decision tree model was 6. Although the score for 7 was slightly higher, it was also more overfit. 
 
