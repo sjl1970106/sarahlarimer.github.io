@@ -23,42 +23,16 @@ I also performed PCA on the unstandardized(L) and standardized(R) data in order 
 ##Analysis
 The first approach of creating and testing models was to look at a logistic regression. The initial step in this process was to split the data into training and testing sets. Once that was done, I could do the regression. The first regression done on the raw data produced an accuracy score of 0.57. 
 Accuracy = 0.57
-(Actual        0     1     2    3   9
- Predicted                           
- 0          9899  4453  2282   88  25
- 1             0     0     1    0   0
- 2           760   430  1095  241   1
- 3             1     0     9    3   0, 0.5701472418083783)
+![test](1regression.png)
 
 As you can see in the confusion matrix, this first logistic regression failed to predict the 9 category of education. 
 
 The next step was to try different modes of standardizing and normalizing the data to see if the regression would perform better. 
 
 Standard Scaler and Min Max Scaler produced similar results:
-Standard Scaler: Accuracy = 0.57
-(Actual        0     1     2    3   9
- Predicted                           
- 0          9879  4428  2271   88  25
- 1             0     5     1    0   0
- 2           776   449  1110  238   1
- 3             5     1     5    6   0, 0.5703027789299046)
-MinMax Scaler: Accuracy = 0.57
-(Actual        0     1     2    3   9
- Predicted                           
- 0          9886  4431  2280   88  25
- 1             0     4     1    0   0
- 2           769   447  1104  240   1
- 3             5     1     2    4   0, 0.5701990875155537)
+![test](2regression.png)
 
-Using the Normalizer gave the best result: 
-Accuracy = 0.65
-(Actual        0     1     2    3   9
- Predicted                           
- 0          8917  2131  1092   68  21
- 1          1149  2125   867   24   3
- 2           594   627  1428  240   2, 0.64651596847781)
-
-However, as you can see, none of the different logistic regression models were a particularly good predictor of the data. All of them failed to predict the 9 category of education and Normalizer, although giving the best score, failed to predict the 3 category as well. 
+The normalizer gave the best results. However, as you can see, none of the different logistic regression models were a particularly good predictor of the data. All of them failed to predict the 9 category of education and Normalizer, although giving the best score, failed to predict the 3 category as well. 
 
 After trying a logistic regression, I tried to do a kNN model. Because the data should be standardized for kNN, I tried to do it with both Standard Scaler as well as the Normalizer. For both of the kNN models, I used a for loop to try and find the best value for k. 
 
