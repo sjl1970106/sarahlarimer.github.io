@@ -16,7 +16,7 @@ The first thing I did to get  a better sense of the data was to see if there wer
 
 I also performed PCA on the unstandardized(L) and standardized(R) data in order to see how much variance could be explained by the principal components. This is shown by the scree plots below
 
-
+![test](pca.png)
 
 
 
